@@ -1,0 +1,82 @@
+{% extends 'base.jinja.html' %}
+
+{% block content %}
+<style>
+  /* Register Form Styles */
+  .auth-card {
+    max-width: 420px;
+    margin: 4rem auto;
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+  .auth-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+  }
+  .auth-card label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: #cbd5e1;
+  }
+  .auth-card input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #0f172a;
+    color: white;
+    margin-bottom: 1.2rem;
+    transition: border-color 0.2s, background 0.3s;
+  }
+  .auth-card input:focus {
+    border-color: var(--primary);
+    outline: none;
+    background: #1e293b;
+  }
+  .auth-card .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .switch-auth {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+  .switch-auth a {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .switch-auth a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="auth-card">
+  <h2>📝 Create Account</h2>
+  <form method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+    
+    <label>Email</label>
+    <input type="email" name="email" placeholder="Enter your email" required>
+
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter your password" required>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+
+  <p class="switch-auth">
+    Already have an account?
+    <a href="{% url 'login' %}">Login</a>
+  </p>
+</div>
+{% endblock %}
