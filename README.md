@@ -27,8 +27,8 @@ A minimal full-stack assignment project for an **e-commerce platform** built wit
 
 ```bash
 # 1. Clone repo
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/chahat7414gupta/E-Comm_app.git
+cd E-Comm_app
 
 # 2. Create virtual environment
 python -m venv .venv
@@ -88,7 +88,7 @@ Login with the seeded admin to manage products.
 git init
 git add .
 git commit -m "Initial commit: Django + SQLAlchemy + Jinja CRUD"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo>.git
+git branch -M master
+git remote add origin https://github.com/chahat7414gupta/E-Comm_app.git
 git push -u origin main
 ```
